@@ -24,6 +24,7 @@ namespace AppKFC
         {
             InitializeComponent();
             MainFrame.Navigate(Pages.PagesClass.pageMainPage);
+          
         }
 
       

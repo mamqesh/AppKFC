@@ -38,7 +38,11 @@
         <Label Content="ГОТОВ К ВЫДАЧЕ" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" FontSize="30" FontWeight="Bold" Height="48" Width="265"/>
         <Label Content="ОЖИДАЕТ ПРИГОТОВЛЕНИЯ" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="10,0,0,0" Height="40" Width="348"/>
         <Label Content="В РАБОТЕ" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Grid.Column="1" Height="40" Width="140"/>
-        <Button Content="AddRandom" HorizontalAlignment="Left" Margin="10,75,0,0" Grid.Row="7" VerticalAlignment="Top" Width="247" Height="65" FontWeight="Bold" FontSize="20" Background="Gray"/>
+        <Button Content="AddRandom" HorizontalAlignment="Left" Margin="10,94,0,0" Grid.Row="7" VerticalAlignment="Top" Width="211" Height="46" FontWeight="Bold" FontSize="20" Background="Gray"/>
         <Label Content="ВЫПОЛНЕН" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3" FontSize="30" FontWeight="Bold" Height="48" Width="189" Grid.ColumnSpan="2" Margin="172,0,0,0" Grid.Row="4"/>
+        <ListBox Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,14,10" Grid.RowSpan="6"/>
+        <ListBox Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,10,10" Grid.RowSpan="7" Grid.Column="1"/>
+        <ListBox Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,11,10,10" Grid.RowSpan="7" Grid.Column="2"/>
+        <ListBox Grid.Row="5" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="11,10,10,10" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2"/>
     </Grid>
 </Page>
