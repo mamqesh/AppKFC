@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace UP
+{
+    /// <summary>
+    /// Логика взаимодействия для Registraciya.xaml
+    /// </summary>
+    public partial class Registraciya : Page
+    {
+        public Registraciya()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Reg_Click(object sender, RoutedEventArgs e)
+        {            
+                string login = textBoxLogin.Text.Trim();
+                string password = PasswordBox.Password.Trim();
+                string password2 = PasswordBox2.Password.Trim();
+                if (login.Length < 5)//если данные введены не верно
+                {
+                    textBoxLogin.ToolTip = "Логин должен содержать не менее 5 символов!";
+                    textBoxLogin.BorderBrush = Brushes.Red;
+                }
+                else if (password.Length < 5)
+                {
+                    PasswordBox.ToolTip = "Пароль должен содержать не менее 5 символов!";
+                    PasswordBox.BorderBrush = Brushes.Red;
+                }
+                else if (password != password2)
+                {
+                    PasswordBox2.ToolTip = "Пароль введён не верно!";
+                    PasswordBox2.BorderBrush = Brushes.Red;
+                }
+                else
+                {
+                    textBoxLogin.ToolTip = "";
+                    textBoxLogin.Background = Brushes.Transparent;
+                    PasswordBox.ToolTip = "";
+                    PasswordBox.Background = Brushes.Transparent;
+                    PasswordBox2.ToolTip = "";
+                    PasswordBox2.Background = Brushes.Transparent;
+                    MessageBox.Show("Регистрация прошла успешно!");
+                }
+        }
+
+        private void Btn_Voiti1(object sender, RoutedEventArgs e)
+        {
+            F1.Content = new Auth();
+        }
+    }
+}
