@@ -8,7 +8,7 @@ namespace AppKFC.Pages
 {
     internal class PagesClass
     {
-        public static mainPage pageMainPage = new mainPage();
+       
 
     }
 }
