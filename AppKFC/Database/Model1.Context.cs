@@ -13,10 +13,10 @@ namespace AppKFC.Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FastFoodEntities : DbContext
+    public partial class danilEntities : DbContext
     {
-        public FastFoodEntities()
-            : base("name=FastFoodEntities")
+        public danilEntities()
+            : base("name=danilEntities")
         {
         }
     

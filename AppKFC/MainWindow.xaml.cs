@@ -20,10 +20,11 @@ namespace AppKFC
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static Pages.mainPage pageMainPage = new Pages.mainPage();
+        public static Pages.mainPage pageMainPage;
         public MainWindow()
         {
             InitializeComponent();
+            pageMainPage = new Pages.mainPage();
             MainFrame.Navigate(pageMainPage);
         }
 
