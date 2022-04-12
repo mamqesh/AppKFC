@@ -22,193 +22,95 @@ namespace AppKFC.Pages
     public partial class mainPage : Page
     {
         danilEntities connection = new danilEntities();
+        private Order selectedOrder = null;
         public mainPage()
         {
             InitializeComponent();
-            ListOrders.DisplayMemberPath = "ID";
+            //ListOrders.DisplayMemberPath = "ID";
             ListInProccess.DisplayMemberPath = "Name";
-            LoadRecipe();
+            //ListReady.DisplayMemberPath = "ID";
+            LoadOrders();
+            LoadReadyOrder();
         }
-
-        private void LoadRecipe()
+        private void LoadOrders()
         {
             var orders = connection.Order.ToList();
             foreach (var _orders in orders)
             {
                 if (_orders.Status == "В работе")
                 {
-                    ListOrders.Items.Add(_orders);
+                    ListOrders.Items.Add(_orders); //ДОБАВЛЕНИЕ В РАБОТЕ
                 }
             }
         }
-
-
+        private void LoadReadyOrder()
+        {
+            var orders = connection.Order.ToList();
+            foreach (var _orders in orders)
+            {
+                if (_orders.Status == "Выполнен")
+                {
+                    ListReady.Items.Add(_orders); //ДОБАВЛЕНИЕ В РАБОТЕ
+                }
+            }
+        }
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
-            //if (labelListInProccess.Content != "")
-            //{
-            //    var back = labelListInProccess.Content;
-            //    ListOrders.Items.Add(back.ToString());
-            //    labelListInProccess.Content = "";
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Вы ничего не выбрали");
+            ListInProccess.Items.Clear();
+            LabelIngredients.Content = "";
         }
-
         private void buttonDone_Click(object sender, RoutedEventArgs e) //ВЗЯТЬ В РАБОТУ
         {
             if (ListOrders.SelectedIndex == -1)
             {
                 return;
             }
-            var order = ListOrders.SelectedItem as Database.Order;
-            var compounds = order.OrderCompound.ToList();
+            selectedOrder = ListOrders.SelectedItem as Database.Order;
+            var compounds = selectedOrder.OrderCompound.ToList();
             ListInProccess.Items.Clear();
-
+            LabelIngredients.Content = "";
             foreach (var _compound in compounds)
             {
-                ListInProccess.Items.Add(_compound.Dish1);   
+                ListInProccess.Items.Add(_compound.Dish1);
             }
-            //string dish;
-            //var ingridients = connection.DishCompound.ToList();
-            //ListIngredients.Items.Clear();
-            //if (labelListInProccess.Content != "")
-            //{
-            //    MessageBox.Show("В работе " + labelListInProccess.Content + "\nВыберите Отмена или Готово");
-            //}
-            //else
-            //{
-            //    if (ListOrders.SelectedIndex != -1)
-            //    {
-            //        dish = this.ListOrders.SelectedItem.ToString();
-            //        labelListInProccess.Content = this.ListOrders.SelectedItem.ToString();
-            //        ListOrders.Items.RemoveAt(ListOrders.SelectedIndex);
-            //        foreach (var _ingridients in ingridients)
-            //        {
-            //            if (dish == _ingridients.Dish1.Name)
-            //            {
-            //                Order ordered = new Order();
-            //                ordered.Status = "В работе";
-            //                ListIngredients.Items.Add(_ingridients.Ingredient1.Name);
-            //            }
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Выберите блюдо");
-            //    }
-            //}
         }
-
-        private void buttonReady_Click(object sender, RoutedEventArgs e)
+        private void ListInProccess_SelectionChanged(object sender, SelectionChangedEventArgs e) //КЛИК НА БЛЮДО
         {
-            //if (labelListInProccess.Content == "")
-            //{
-            //    MessageBox.Show("Вы ничего не выбрали!");
-            //}
-            //else
-            //{
-            //    labelListInProccess.Content = "";
-            //    ListIngredients.Items.Clear();
-            //    MessageBox.Show("Готов к выдаче");
-            //}
+            var dish = ListInProccess.SelectedItem as Database.Dish;
+            if (dish != null)
+            {
+                var compound = dish.DishCompound.ToList();
+                LabelIngredients.Content = "";
+                foreach (var _compound in compound)
+                {
+                    LabelIngredients.Content += _compound.Ingredient1.Name + "\n";
+                }
+            }
+        }
+        private void buttonReady_Click(object sender, RoutedEventArgs e) //ГОТОВО
+        {
+
+          
+            if (ListInProccess.SelectedIndex != -1)
+            {
+                LabelIngredients.Content = "";
+                ListInProccess.Items.RemoveAt(this.ListInProccess.SelectedIndex);
+                if (ListInProccess.Items.Count==0)
+                {
+                    ListReady.Items.Add(ListOrders.SelectedItem); // ДОБАВЛЕНИЕ ВЫПОЛНЕННОГО
+                    ListOrders.Items.RemoveAt(ListOrders.SelectedIndex);
+                    var order = connection.Order.Where(x => x.ID == selectedOrder.ID).FirstOrDefault();
+                    if (order != null)
+                    {
+                        order.Status = "Выполнен";
+                        connection.SaveChanges();
+                    }
+                }   
+            }
+            else
+            {
+                MessageBox.Show("\t\tВыберите приготовленное блюдо\t\t");
+            }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//public Oficant()
-//{
-//    InitializeComponent();
-
-//    var dishes = Baza.Dish.ToList();
-
-//    foreach (var _dish in dishes)
-//    {
-//        test2.Items.Add(_dish.Name);
-//    }
-//}
-
-//user_07Entities Baza = new user_07Entities();
-//Dictionary<int, Dish[]> Zakaz = new Dictionary<int, Dish[]>();
-//int a = 1;
-
-//private void Button_Click(object sender, RoutedEventArgs e)
-//{
-//    test3.Items.Add(test2.SelectedItem);
-//}
-//private void Button_Click_1(object sender, RoutedEventArgs e)
-//{
-//    if (test3.Items.Count == 0)
-//    {
-//        MessageBox.Show("Выберите блюдо");
-//        return;
-//    }
-
-//    nomervid.Items.Add(a);
-//    Dish[] dishes = new Dish[test3.Items.Count];
-//    for (int i = 0; i < test3.Items.Count; i++)
-//    {
-//        dishes[i] = test3.Items[i] as Dish;
-//    }
-//    Zakaz[a] = dishes;
-//    a++;
-//    test3.Items.Clear();
-//}
-
-//private void Button_Click_2(object sender, RoutedEventArgs e)
-//{
-
-//    if (nomervid.SelectedIndex > -1)
-//    {
-//        nomervid.Items.RemoveAt(nomervid.SelectedIndex);
-//    }
-//    if (test3.SelectedIndex > -1)
-//    {
-//        test3.Items.RemoveAt(test3.SelectedIndex);
-//    }
-//    if (Vidacha.SelectedIndex > -1)
-//    {
-//        Vidacha.Items.RemoveAt(Vidacha.SelectedIndex);
-//    }
-
-//}
-//private void Button_Click_3(object sender, RoutedEventArgs e)
-//{
-//    Vidacha.Items.Add(nomervid.SelectedItem);
-//    if (nomervid.SelectedIndex > -1)
-//    {
-//        nomervid.Items.RemoveAt(nomervid.SelectedIndex);
-//    }
-//}
