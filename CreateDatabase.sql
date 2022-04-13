@@ -45,7 +45,7 @@ CREATE TABLE [Dish] (
 )
 GO
 CREATE TABLE [DishCompound] (
-	
+	DishCompoundID INT PRIMARY KEY IDENTITY(1,1),
 	Dish bigint NOT NULL,
 	Ingredient bigint NOT NULL,
 	Volume decimal NOT NULL,
@@ -57,7 +57,7 @@ GO
 
 
 CREATE TABLE [OrderCompound] (
-	
+	OrderCompoundID INT PRIMARY KEY IDENTITY(1,1),
 	[Order] bigint NOT NULL,
 	Dish bigint NOT NULL,
 	Price money NOT NULL,
