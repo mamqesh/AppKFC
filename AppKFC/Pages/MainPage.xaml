@@ -10,6 +10,7 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
+
             <ColumnDefinition Width="372*"/>
             <ColumnDefinition Width="318*"/>
             <ColumnDefinition Width="377*"/>
@@ -32,15 +33,15 @@
         <Button x:Name="buttonCancel" Content="ОТМЕНА" HorizontalAlignment="Left" VerticalAlignment="Top"
                 Height="130" Width="513" Grid.Column="3" Grid.ColumnSpan="2" Cursor="Hand" FontSize="25" FontWeight="Bold" Visibility="Visible"
                 Background="OrangeRed" Margin="11,13,0,0" Grid.RowSpan="2" Click="buttonCancel_Click"/>
-        <Button x:Name="buttonDone" Content="ВЗЯТЬ В РАБОТУ" HorizontalAlignment="Left" VerticalAlignment="Top"
+        <Button x:Name="buttonDone"  Content="ВЗЯТЬ В РАБОТУ" HorizontalAlignment="Left" VerticalAlignment="Top"
                 Height="130" Width="513" Grid.Column="3" Grid.ColumnSpan="2" Cursor="Hand" FontSize="25" FontWeight="Bold" Visibility="Visible"
                 Background="MediumSeaGreen" Margin="11,9,0,0" Grid.Row="3" FontStyle="Normal" Click="buttonDone_Click"/>
         <Label Content="ИНГРИДИЕНТЫ" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" FontSize="30" FontWeight="Bold" Height="48" Width="265"/>
         <Label Content="ОЖИДАЕТ ПРИГОТОВЛЕНИЯ" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="10,0,0,0" Height="40" Width="348"/>
         <Label Content="В РАБОТЕ" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Grid.Column="1" Height="40" Width="140"/>
-        <Button Content="AddRandom" HorizontalAlignment="Left" Margin="10,94,0,0" Grid.Row="7" VerticalAlignment="Top" Width="211" Height="46" FontWeight="Bold" FontSize="20" Background="Gray"/>
+        <Button Content="AddRandom" HorizontalAlignment="Left" Margin="10,94,0,0" Grid.Row="7" VerticalAlignment="Top" Width="211" Height="46" FontWeight="Bold" FontSize="20" Background="Gray" Click="Button_ClickAddRandom"/>
         <Label Content="ВЫПОЛНЕН" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3" FontSize="30" FontWeight="Bold" Height="48" Width="189" Grid.ColumnSpan="2" Margin="172,0,0,0" Grid.Row="4"/>
-        <ListBox Name="ListOrders" Grid.Row="1" Margin="10,10,14,0" Grid.RowSpan="6" Height="642" VerticalAlignment="Top" FontSize="24">
+        <ListBox Name="ListOrders" Grid.Row="1" Margin="10,10,14,0" Grid.RowSpan="6" Height="642" VerticalAlignment="Top" FontSize="24" SelectionChanged="ListOrders_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
@@ -51,7 +52,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListBox Name="ListInProccess" Grid.Row="1" Margin="10,10,10,0" Grid.RowSpan="5" Grid.Column="1" Height="492" VerticalAlignment="Top" SelectionChanged="ListInProccess_SelectionChanged" FontSize="24"/>
+        <ListBox Name="ListInProccess" Grid.Row="1" Margin="10,10,10,0" Grid.RowSpan="6" Grid.Column="1" Height="642" VerticalAlignment="Top" SelectionChanged="ListInProccess_SelectionChanged" FontSize="24"/>
         <Label  Name="LabelIngredients" Grid.Row="1"  Margin="10,11,10,0" Grid.RowSpan="6" Grid.Column="2" Height="641" VerticalAlignment="Top" FontSize="24"/>
         <ListBox Name="ListReady" Grid.Row="5"  Margin="11,10,10,10" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2" FontSize="24">
             <ListBox.ItemTemplate>
@@ -60,11 +61,9 @@
                         <Run Text="{Binding ID}"></Run>
                         <Run Text=" заказ - "></Run>
                         <Run Text="{Binding Status}"></Run>
-                        </TextBlock>
+                    </TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="166,40,0,0" Grid.Row="7" VerticalAlignment="Top" Width="100"/>
-        <Image Margin="0,10,304.199,10" Grid.Row="6" Source="/AppKFC;component/kisspng-kfc-logo-fast-food-restaurant-mcdonald-s-fried-chicken-5accd64290b671.5299278515233736345928.png" Stretch="Fill" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="280" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Right" Width="381"/>
     </Grid>
 </Page>

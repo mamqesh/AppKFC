@@ -13,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AppKFC
+namespace AppKFC.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для registrationPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class registrationPage : Page
     {
-        public static Pages.mainPage pageMainPage;
-        public static Pages.userPage pageUserPage;
-        public MainWindow()
+        public registrationPage()
         {
             InitializeComponent();
-            pageMainPage = new Pages.mainPage();
-            pageUserPage = new Pages.userPage();
-            MainFrame.Navigate(pageMainPage);
-            //MainFrame.Navigate(pageUserPage);
         }
-
-      
     }
 }
