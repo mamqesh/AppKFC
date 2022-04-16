@@ -22,13 +22,16 @@ namespace AppKFC
     {
         public static Pages.mainPage pageMainPage;
         public static Pages.userPage pageUserPage;
+        public static Pages.registrationPage pageRegistrationPage;
         public MainWindow()
         {
             InitializeComponent();
             pageMainPage = new Pages.mainPage();
             pageUserPage = new Pages.userPage();
-            MainFrame.Navigate(pageMainPage);
+            pageRegistrationPage = new Pages.registrationPage();
+            //MainFrame.Navigate(pageMainPage);
             //MainFrame.Navigate(pageUserPage);
+            MainFrame.Navigate(pageRegistrationPage);
         }
 
       
