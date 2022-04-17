@@ -1,0 +1,20 @@
+﻿<Page x:Class="AppKFC.Pages.registrationPageClient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppKFC.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="registrationPageClient">
+
+    <Grid Background="#FFDADADA">
+        <Border Background="WhiteSmoke" Width="1560" Height="790" CornerRadius="30">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <TextBox x:Name="textBoxPhone" TextWrapping="Wrap" Text="TextBox" Margin="56,320,1018,415"/>
+            
+        </Border>
+    </Grid>
+</Page>

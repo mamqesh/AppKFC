@@ -23,7 +23,6 @@ namespace AppKFC.Pages
     {
         //danilEntities connection = new danilEntities();
         FastFoodEntities connection = new FastFoodEntities();
-
         private Order selectedOrder = null;
         public mainPage()
         {
@@ -91,8 +90,6 @@ namespace AppKFC.Pages
         }
         private void buttonReady_Click(object sender, RoutedEventArgs e) //ГОТОВО
         {
-
-          
             if (ListInProccess.SelectedIndex != -1)
             {
                 LabelIngredients.Content = "";
@@ -126,36 +123,39 @@ namespace AppKFC.Pages
                     dishes.Add(dish);
                 }
             }
-
-
             Random random = new Random();
-
             Dish randomDish = dishes[random.Next(dishes.Count)];
-
             Order order = new Order();
             order.ID = connection.Order.Count() + 1;
             order.Status = "В работе";
             order.Date = DateTime.Now;
             order.Employee = "9295479015";
             order.Client = "9639090322";
-
             OrderCompound compound = new OrderCompound();
             compound.Order = order.ID;
             compound.Dish = randomDish.ID;
             compound.Price = randomDish.Price;
             compound.Status = "В работе";
             compound.Count = 1;
-
             connection.Order.Add(order);
             connection.OrderCompound.Add(compound);
-
             connection.SaveChanges();
+            //ОЧИСТКА 
+            //ListOrders.Clear()????
+            //ListReady.Clear()???
+            LoadOrders();
+            LoadReadyOrder();
 
         }
-
-        private void ListOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ListReady_SelectionChanged(object sender, SelectionChangedEventArgs e)//ПОДТВЕРЖДЕНИЕ К ВЫДАЧЕ
         {
-            
+
+
+        }
+        private void ListOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)//ПОДТВЕРЖДЕНИЕ К ВЫДАЧЕ
+        {
+
+
         }
     }
 }

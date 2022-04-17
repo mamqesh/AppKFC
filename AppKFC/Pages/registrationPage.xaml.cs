@@ -30,20 +30,34 @@ namespace AppKFC.Pages
             textBoxLogin.ToolTip = "Введите ваш логин";
             passwordBoxPassword.ToolTip = "Введите ваш пароль";
         }
-
         private void Button_Click(object sender, RoutedEventArgs e) //ВХОД В УЧЕТКУ
         {
+            int tryExit=0;
+            string login = textBoxLogin.Text.Trim();
+            string password = passwordBoxPassword.Password.Trim();
             var employees = connection.Employee.ToList();
             foreach (var _employees in employees)
             {
-                if (textBoxLogin.ToString() == _employees.Phone)
+                if (login == _employees.Phone)
                 {
-                    if (passwordBoxPassword.ToString() == _employees.Password)
+                    if (password == _employees.Password)
                     {
                         NavigationService.Navigate(MainWindow.pageMainPage);
+                        tryExit++;
                     }
                 }
             }
+            if (tryExit==0)
+            {
+                textBoxLogin.Clear();
+                passwordBoxPassword.Clear();
+                MessageBox.Show("Данная учетная запись не найдена");
+            }
+        }
+
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(MainWindow.pageFirstPage);
         }
     }
 }

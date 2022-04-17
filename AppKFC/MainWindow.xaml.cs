@@ -23,15 +23,23 @@ namespace AppKFC
         public static Pages.mainPage pageMainPage;
         public static Pages.userPage pageUserPage;
         public static Pages.registrationPage pageRegistrationPage;
+        public static Pages.registrationPageClient pageRegistrationPageClient;
+        public static Pages.firstPage pageFirstPage;
+        public static Pages.loginPageClient pageLoginPageClient;
+
         public MainWindow()
         {
             InitializeComponent();
             pageMainPage = new Pages.mainPage();
             pageUserPage = new Pages.userPage();
             pageRegistrationPage = new Pages.registrationPage();
+            pageRegistrationPageClient = new Pages.registrationPageClient();
+            pageFirstPage = new Pages.firstPage();
+            pageLoginPageClient = new Pages.loginPageClient();
             //MainFrame.Navigate(pageMainPage);
             //MainFrame.Navigate(pageUserPage);
-            MainFrame.Navigate(pageRegistrationPage);
+            //MainFrame.Navigate(pageRegistrationPage);
+            MainFrame.Navigate(pageFirstPage);
         }
 
       
