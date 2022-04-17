@@ -21,7 +21,9 @@ namespace AppKFC.Pages
     /// </summary>
     public partial class mainPage : Page
     {
-        danilEntities connection = new danilEntities();
+        //danilEntities connection = new danilEntities();
+        FastFoodEntities connection = new FastFoodEntities();
+
         private Order selectedOrder = null;
         public mainPage()
         {

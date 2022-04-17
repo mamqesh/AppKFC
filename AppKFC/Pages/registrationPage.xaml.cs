@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AppKFC.Database;
+
 
 namespace AppKFC.Pages
 {
@@ -20,9 +22,28 @@ namespace AppKFC.Pages
     /// </summary>
     public partial class registrationPage : Page
     {
+        FastFoodEntities connection = new FastFoodEntities();
+
         public registrationPage()
         {
             InitializeComponent();
+            textBoxLogin.ToolTip = "Введите ваш логин";
+            passwordBoxPassword.ToolTip = "Введите ваш пароль";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) //ВХОД В УЧЕТКУ
+        {
+            var employees = connection.Employee.ToList();
+            foreach (var _employees in employees)
+            {
+                if (textBoxLogin.ToString() == _employees.Phone)
+                {
+                    if (passwordBoxPassword.ToString() == _employees.Password)
+                    {
+                        NavigationService.Navigate(MainWindow.pageMainPage);
+                    }
+                }
+            }
         }
     }
 }

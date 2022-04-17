@@ -13,10 +13,10 @@ namespace AppKFC.Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class danilEntities : DbContext
+    public partial class FastFoodEntities : DbContext
     {
-        public danilEntities()
-            : base("name=danilEntities")
+        public FastFoodEntities()
+            : base("name=FastFoodEntities")
         {
         }
     
@@ -32,6 +32,5 @@ namespace AppKFC.Database
         public virtual DbSet<Ingredient> Ingredient { get; set; }
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<OrderCompound> OrderCompound { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }
