@@ -24,5 +24,10 @@ namespace AppKFC.Pages
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e) //ДОБАВЛЕНИЕ КЛИЕНТА
+        {
+            
+        }
     }
 }

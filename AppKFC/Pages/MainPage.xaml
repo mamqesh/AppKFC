@@ -28,13 +28,13 @@
         </Grid.RowDefinitions>
         <Button x:Name="buttonReady" Content="ГОТОВО" HorizontalAlignment="Left" VerticalAlignment="Center"
                 Height="130" Width="513" Grid.Column="3" Grid.ColumnSpan="2" Cursor="Hand" FontSize="25" FontWeight="Bold" Visibility="Visible"
-                Background="MediumSeaGreen" Margin="11,0,0,0" Grid.Row="2" Click="buttonReady_Click"/>
+                Background="MediumSeaGreen" Margin="11,0,0,0" Grid.Row="2" Click="buttonReady_Click" BorderBrush="Black"/>
         <Button x:Name="buttonCancel" Content="ОТМЕНА" HorizontalAlignment="Left" VerticalAlignment="Top"
                 Height="130" Width="513" Grid.Column="3" Grid.ColumnSpan="2" Cursor="Hand" FontSize="25" FontWeight="Bold" Visibility="Visible"
-                Background="OrangeRed" Margin="11,13,0,0" Grid.RowSpan="2" Click="buttonCancel_Click"/>
+                Background="OrangeRed" Margin="11,13,0,0" Grid.RowSpan="2" Click="buttonCancel_Click" BorderBrush="Black"/>
         <Button x:Name="buttonDone"  Content="ВЗЯТЬ В РАБОТУ" HorizontalAlignment="Left" VerticalAlignment="Top"
                 Height="130" Width="513" Grid.Column="3" Grid.ColumnSpan="2" Cursor="Hand" FontSize="25" FontWeight="Bold" Visibility="Visible"
-                Background="MediumSeaGreen" Margin="11,9,0,0" Grid.Row="3" FontStyle="Normal" Click="buttonDone_Click"/>
+                Background="MediumSeaGreen" Margin="11,9,0,0" Grid.Row="3" FontStyle="Normal" Click="buttonDone_Click" BorderBrush="Black"/>
         <Label Content="ИНГРИДИЕНТЫ" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" FontSize="30" FontWeight="Bold" Height="48" Width="265"/>
         <Label Content="ОЖИДАЕТ ПРИГОТОВЛЕНИЯ" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="10,0,0,0" Height="40" 
                Width="348"/>
