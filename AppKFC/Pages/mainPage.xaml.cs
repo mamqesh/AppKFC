@@ -140,9 +140,8 @@ namespace AppKFC.Pages
             connection.Order.Add(order);
             connection.OrderCompound.Add(compound);
             connection.SaveChanges();
-            //ОЧИСТКА 
-            //ListOrders.Clear()????
-            //ListReady.Clear()???
+            ListOrders.Items.Clear();
+            ListReady.Items.Clear();
             LoadOrders();
             LoadReadyOrder();
 
@@ -152,7 +151,7 @@ namespace AppKFC.Pages
 
 
         }
-        private void ListOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)//ПОДТВЕРЖДЕНИЕ К ВЫДАЧЕ
+        private void ListOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
 
