@@ -21,8 +21,8 @@ namespace AppKFC.Pages
     /// </summary>
     public partial class mainPage : Page
     {
-        //danilEntities connection = new danilEntities();
-        FastFoodEntities connection = new FastFoodEntities();
+        danilEntities connection = new danilEntities();
+        //FastFoodEntities connection = new FastFoodEntities();
         private Order selectedOrder = null;
         public mainPage()
         {
@@ -51,7 +51,7 @@ namespace AppKFC.Pages
             {
                 if (_orders.Status == "Выполнен")
                 {
-                    ListReady.Items.Add(_orders); //ДОБАВЛЕНИЕ В РАБОТЕ
+                    ListReady.Items.Add(_orders); //ДОБАВЛЕНИЕ В ГОТОВО
                 }
             }
         }

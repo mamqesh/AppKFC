@@ -25,7 +25,8 @@ namespace AppKFC.Pages
         {
             InitializeComponent();
         }
-        FastFoodEntities connection = new FastFoodEntities();
+        danilEntities connection = new danilEntities();
+        //FastFoodEntities connection = new FastFoodEntities();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int tryExit = 0;
@@ -35,6 +36,7 @@ namespace AppKFC.Pages
             {
                 if (login == _clients.Phone)
                 {
+                        MainWindow.Name=textBoxLogin.Text.Trim();
                         NavigationService.Navigate(MainWindow.pageUserPage);
                         tryExit++;
                 }
@@ -54,6 +56,11 @@ namespace AppKFC.Pages
         private void Button_Click3(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(MainWindow.pageFirstPage);
+        }
+
+        private void textBoxLogin_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

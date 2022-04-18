@@ -22,7 +22,8 @@ namespace AppKFC.Pages
     /// </summary>
     public partial class registrationPage : Page
     {
-        FastFoodEntities connection = new FastFoodEntities();
+        //FastFoodEntities connection = new FastFoodEntities();
+        danilEntities connection = new danilEntities();
 
         public registrationPage()
         {

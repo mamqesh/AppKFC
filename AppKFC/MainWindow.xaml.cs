@@ -26,6 +26,7 @@ namespace AppKFC
         public static Pages.registrationPageClient pageRegistrationPageClient;
         public static Pages.firstPage pageFirstPage;
         public static Pages.loginPageClient pageLoginPageClient;
+        public static string Name;
 
         public MainWindow()
         {
