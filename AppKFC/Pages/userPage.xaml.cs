@@ -119,8 +119,6 @@ namespace AppKFC.Pages
             var id = connection.Order.ToList().Count() + 1;
             var countDish = connection.OrderCompound.ToList().Count() + 1;
             string nameClient = MainWindow.Name;
-
-            
             order.Client = nameClient;
             order.Employee = "9921161534";
             order.Date = DateTime.Now;

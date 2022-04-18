@@ -131,6 +131,7 @@ namespace AppKFC.Pages
             order.Date = DateTime.Now;
             order.Employee = "9295479015";
             order.Client = "9639090322";
+
             OrderCompound compound = new OrderCompound();
             compound.Order = order.ID;
             compound.Dish = randomDish.ID;
