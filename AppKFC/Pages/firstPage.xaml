@@ -12,8 +12,10 @@
         <Image Margin="1148,0,0,0" Source="/AppKFC;component/1636123659_4-papik-pro-p-kfc-logotip-foto-4.jpg" Stretch="Fill"/>
         <Button Content="СДЕЛАТЬ ЗАКАЗ" HorizontalAlignment="Right" Margin="0,820,1429,0" VerticalAlignment="Top" Width="333" Height="84" FontSize="30" 
                 Background="Red" Click="Button_Click" BorderBrush="Black"/>
-        <Button Content="Я ПОВАР" HorizontalAlignment="Right" Margin="0,928,1429,0" VerticalAlignment="Top" Width="333" Height="84" FontSize="30" 
+        <Button Content="ПОВАР" HorizontalAlignment="Right" Margin="0,928,1429,0" VerticalAlignment="Top" Width="333" Height="84" FontSize="30" 
                 Background="Red" Click="Button_Click1" BorderBrush="Black"/>
+        <Button Content="АДМИНИНСТРАТОР" HorizontalAlignment="Right" Margin="0,928,1040,0" VerticalAlignment="Top" Width="333" Height="84" FontSize="25" 
+            Background="Red" BorderBrush="Black" Click="Button_Click_1"/>
 
     </Grid>
 </Page>

@@ -22,14 +22,11 @@ namespace AppKFC.Pages
     public partial class mainPage : Page
     {
         danilEntities connection = new danilEntities();
-        //FastFoodEntities connection = new FastFoodEntities();
         private Order selectedOrder = null;
         public mainPage()
         {
             InitializeComponent();
-            //ListOrders.DisplayMemberPath = "ID";
             ListInProccess.DisplayMemberPath = "Name";
-            //ListReady.DisplayMemberPath = "ID";
             LoadOrders();
             LoadReadyOrder();
         }

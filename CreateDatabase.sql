@@ -68,3 +68,10 @@ CREATE TABLE [OrderCompound] (
 
 )
 GO
+
+
+	Create table Administrator(
+	[Login] varchar(100),
+	[Password] varchar(100)
+)
+GO

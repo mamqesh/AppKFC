@@ -25,6 +25,7 @@ namespace AppKFC.Database
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Administrator> Administrator { get; set; }
         public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<Dish> Dish { get; set; }
         public virtual DbSet<DishCompound> DishCompound { get; set; }
@@ -32,6 +33,5 @@ namespace AppKFC.Database
         public virtual DbSet<Ingredient> Ingredient { get; set; }
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<OrderCompound> OrderCompound { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

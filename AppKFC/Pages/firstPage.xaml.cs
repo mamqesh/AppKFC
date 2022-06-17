@@ -34,5 +34,10 @@ namespace AppKFC.Pages
         {
             NavigationService.Navigate(MainWindow.pageRegistrationPage);
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(MainWindow.pageLoginAdmin);
+        }
     }
 }

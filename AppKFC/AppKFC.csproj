@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>AppKFC</RootNamespace>
     <AssemblyName>AppKFC</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -83,6 +83,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Database\Administrator.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\Client.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -119,14 +122,19 @@
     <Compile Include="Database\OrderCompound.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\adminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\firstPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\loginAdm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\mainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\regAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,14 +164,23 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\adminPage.xaml.cs">
+      <DependentUpon>adminPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\firstPage.xaml.cs">
       <DependentUpon>firstPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\loginAdm.xaml.cs">
+      <DependentUpon>loginAdm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\loginPageClient.xaml.cs">
       <DependentUpon>loginPageClient.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\mainPage.xaml.cs">
       <DependentUpon>mainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\regAdmin.xaml.cs">
+      <DependentUpon>regAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\registrationPage.xaml.cs">
       <DependentUpon>registrationPage.xaml</DependentUpon>
@@ -209,6 +230,7 @@
   <ItemGroup>
     <Resource Include="1636123661_5-papik-pro-p-kfc-logotip-foto-5 %281%29.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Database\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
