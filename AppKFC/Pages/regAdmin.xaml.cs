@@ -47,7 +47,7 @@ namespace AppKFC.Pages
                         if (result>0)
                         {
                             MessageBox.Show("Администратор успешно зарегестрирован\nЛогин: " + login + "\nПароль: " + password,"Предупреждение", MessageBoxButton.OK, MessageBoxImage.Question);
-
+                            NavigationService.Navigate(MainWindow.pageFirstPage);
                         }
                     }
                     else
