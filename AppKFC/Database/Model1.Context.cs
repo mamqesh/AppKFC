@@ -33,5 +33,6 @@ namespace AppKFC.Database
         public virtual DbSet<Ingredient> Ingredient { get; set; }
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<OrderCompound> OrderCompound { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

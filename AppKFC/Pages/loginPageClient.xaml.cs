@@ -26,7 +26,6 @@ namespace AppKFC.Pages
             InitializeComponent();
         }
         danilEntities connection = new danilEntities();
-        //FastFoodEntities connection = new FastFoodEntities();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int tryExit = 0;
